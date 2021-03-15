@@ -1,0 +1,55 @@
+@import "global.vars";
+
+
+// title — Cardo
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
+// body — Nunito
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+// heading — Teko
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+
+
+// colour scheme
+$theme-colors: (
+                        "primary":    #C7905A,
+                        "secondary":  #F0D4A1,
+                        "info":       #5b5c24,
+                        "success":    #ff4444,
+
+                        "warning":    #ffbb33,
+                        "danger":     #00C851,
+                        "light":      #E5E0D0,
+                        "dark":       #292f36
+);
+$body-bg:                   #FFF9E6;
+$body-color:                #292f36;
+$text-muted:                #94948E;
+
+
+// links
+$link-decoration: underline;
+
+
+// outline
+$input-btn-focus-width:       .2rem;
+:focus, .btn:focus {
+  outline: rgba(#C7905A, .25) .2rem solid;
+}
+
+
+// fonts
+$font-family-base: "Nunito", sans-serif !important;
+$headings-font-family: "Teko", sans-serif !important;
+.cardo {
+  font-family: "Cardo", serif !important;
+}
+
+
+// Then import Bootstrap an BootstrapVue SCSS files (order is important)
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../node_modules/bootstrap-vue/src/index.scss';
+
+
+.text-small {
+  font-size: .85rem;
+}

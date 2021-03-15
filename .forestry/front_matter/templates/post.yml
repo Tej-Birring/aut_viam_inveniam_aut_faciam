@@ -1,4 +1,37 @@
 ---
 label: Post
 hide_body: false
-fields: []
+fields:
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: hero_image
+  type: file
+  config:
+    maxSize: 64
+  label: Hero Image
+- name: images
+  type: image_gallery
+  config: {}
+  label: Images
+- name: date_published
+  type: datetime
+  label: Date Published
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: date_last_modified
+  type: datetime
+  label: Date Last Modified
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now

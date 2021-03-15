@@ -1,5 +1,6 @@
 {
-  "name": "tej_blog",
+  "name": "aut_viam_inveniam_aut_faciam",
+
   "private": true,
   "scripts": {
     "develop": "gridsome develop",

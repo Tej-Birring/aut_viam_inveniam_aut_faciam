@@ -5,8 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Aut viam inveniam aut faciam',
-  titleTemplate: 'Aut viam inveniam aut faciam',
+  siteName: 'Aut Viam Inveniam Aut Faciam',
+  titleTemplate: 'Aut Viam Inveniam Aut Faciam',
   plugins: [],
   css: {
     loaderOptions: {

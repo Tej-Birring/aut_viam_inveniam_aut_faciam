@@ -40,3 +40,5 @@ fields:
     time_format: 
     display_utc: false
   default: now
+pages:
+- src/assets/posts/a-sample-post.md

@@ -7,6 +7,9 @@ date_last_modified: 2021-03-15T23:48:28.000+00:00
 title: A sample post
 hero_image: ''
 images: []
+seo_keywords:
+- polymorphism
+seo_description: On dynamic and static polymorphism...
 
 ---
 ![](/static/uploads/screenshot-2021-03-08-at-08-16-30.png)

@@ -13,8 +13,10 @@ module.exports = {
       options: {
         path: 'src/assets/posts/**/*.md',
         typeName: 'Post',
+        //resolveAbsolutePaths: true,
         remark: {
-          // remark options
+          externalLinksTarget: "_blank",
+          externalLinksRel: ["nofollow", "noopener", "noreferrer"]
         }
       }
     }
@@ -27,6 +29,16 @@ module.exports = {
       scss: {
         additionalData: '@import "@/assets/styles/global.vars.scss";'
       }
+    }
+  },
+  transformers: {
+    remark: {
+      plugins: [
+          "@gridsome/remark-prismjs",
+          ['@noxify/gridsome-remark-classes', {
+            'image': 'img-fluid',
+          }]
+      ]
     }
   }
 };

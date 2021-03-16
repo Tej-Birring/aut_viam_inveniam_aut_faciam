@@ -18,10 +18,10 @@
 
         <h1 class="text-center display-4">{{$page.post.title}}</h1>
 
-        <div class="content" v-html="$page.post.content">
+        <div class="postContent" v-html="$page.post.content">
 
         </div>
-        {{$page.post}}
+
         <div class="break mt-4"></div>
     </Layout>
 </template>
@@ -74,7 +74,7 @@
         }
     }
 
-    .content {
+    .postContent {
 
     }
 </style>

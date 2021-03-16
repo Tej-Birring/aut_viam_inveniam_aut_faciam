@@ -9,7 +9,7 @@ hero_image: ''
 images: []
 
 ---
-![](/uploads/screenshot-2021-03-08-at-08-16-30.png)
+![](/static/uploads/screenshot-2021-03-08-at-08-16-30.png)
 
 Yada yada yada.
 
@@ -17,4 +17,6 @@ Yada yada yada.
 
 sdfasdasd
 
-    asdasdasd
+```c
+    const int n = 100;
+```

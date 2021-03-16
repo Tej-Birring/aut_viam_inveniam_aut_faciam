@@ -24,10 +24,14 @@ $theme-colors: (
 $body-bg:                   #FFF9E6;
 $body-color:                #292f36;
 $text-muted:                #94948E;
-
+$input-placeholder-color:   #94948E;
 
 // links
 $link-decoration: underline;
+.resetLink, .resetLink:hover, .resetLink:focus, .resetLink:active, .resetLink:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
 
 
 // outline
@@ -50,6 +54,21 @@ $headings-font-family: "Teko", sans-serif !important;
 @import '../../../node_modules/bootstrap-vue/src/index.scss';
 
 
+// class to disable dragging of items
+.noDrag {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -youbkit-touch-callout: none; /* iOS Safari */
+  -youbkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
+  -moz-user-select: none;       /* Firefox */
+  -ms-user-select: none;        /* IE 10+ and Edge */
+  user-select: none;            /* Non-prefixed version,
+                                  currently supported by Chrome and Opera */
+}
+
+
+// text helpers
 .text-small {
   font-size: .85rem;
 }

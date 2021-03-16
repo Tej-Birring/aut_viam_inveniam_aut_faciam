@@ -7,7 +7,21 @@
 module.exports = {
   siteName: 'Aut Viam Inveniam Aut Faciam',
   titleTemplate: 'Aut Viam Inveniam Aut Faciam',
-  plugins: [],
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'src/assets/posts/**/*.md',
+        typeName: 'Post',
+        remark: {
+          // remark options
+        }
+      }
+    }
+  ],
+  templates: {
+    Post: '/posts/:title'
+  },
   css: {
     loaderOptions: {
       scss: {

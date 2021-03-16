@@ -1,9 +1,15 @@
 <template>
   <Layout>
 
-    <b-input class="shadow text-center" type="text" id="search" placeholder="Search">
+    <p class="info cardo text-muted">
+      This is essentially an archive of the intellectual wanderings of a Computer Systems Engineer.
+      Nothing you will find here is (intentionally) substantive.
+    </p>
+
+    <b-input class="search-bar shadow text-center font-weight-bold" type="text" id="search" placeholder="Search">
     </b-input>
 
+    <PostsList :posts="posts"/>
 
     <div>
 
@@ -27,16 +33,66 @@
   </Layout>
 </template>
 
+
 <script>
+import PostsList from "../components/PostsList";
+
 export default {
+  components: {PostsList},
   metaInfo: {
     title: 'Hello, world!'
+  },
+  computed: {
+    posts() {
+      return this.$page.posts.edges.map( el => {
+          return el.node;
+      });
+    }
   }
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
+
+<style scoped lang="scss">
+  .info {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 3rem;
+    @media (min-width: $bp-md) {
+      width: 92%;
+    }
+    @media (min-width: $bp-lg) {
+      width: 60%;
+    }
+  }
+
+  .search-bar {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    @media (min-width: $bp-lg) {
+      width: 70%;
+    }
+  }
+
+
 </style>
+
+
+<page-query>
+  query {
+    posts: allPost {
+      edges {
+        node {
+          id,
+          fileInfo{name},
+          title,
+          excerpt,
+          date_published
+          tags,
+        }
+      }
+    }
+  }
+</page-query>

@@ -11,6 +11,12 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 import '~/assets/styles/global.scss'
 
+// Day.js
+import * as dayjs from 'dayjs';
+Vue.$dayjs = Vue.prototype.$dayjs = dayjs;
+import advancedFormat from 'dayjs/plugin/advancedFormat'
+dayjs.extend(advancedFormat);
+
 // Gridsome app:
 import DefaultLayout from '~/layouts/Default.vue'
 

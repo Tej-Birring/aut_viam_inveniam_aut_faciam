@@ -17,6 +17,6 @@ Yada yada yada.
 
 sdfasdasd
 
-```c
-    const int n = 100;
+```javascript
+    let n = 100;
 ```

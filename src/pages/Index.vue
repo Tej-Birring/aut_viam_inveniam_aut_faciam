@@ -6,10 +6,12 @@
       Nothing you will find here is (intentionally) substantive.
     </p>
 
-    <b-input class="search-bar shadow text-center font-weight-bold" type="text" id="search" placeholder="Search">
+    <b-input class="search-bar shadow text-center font-weight-bold" type="text" id="search" placeholder="Search"
+             v-model="search">
     </b-input>
 
-    <PostsList :posts="posts"/>
+    {{ searchResults }}
+<!--    <PostsList :posts="posts"/>-->
 
     <div>
 
@@ -42,11 +44,21 @@ export default {
   metaInfo: {
     title: 'Hello, world!'
   },
+  data() {
+    return {
+      search: ""
+    }
+  },
   computed: {
     posts() {
       return this.$page.posts.edges.map( el => {
           return el.node;
       });
+    },
+    searchResults () {
+      const searchTerm = this.search;
+      if (searchTerm.length < 3) return [];
+      return this.$search.search({ query: searchTerm, limit: 5 })
     }
   }
 }

@@ -19,6 +19,25 @@ module.exports = {
           externalLinksRel: ["nofollow", "noopener", "noreferrer"]
         }
       }
+    },
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+        searchFields: ['title'],
+        collections: [
+          {
+            typeName: 'Post',
+            indexName: 'Post',
+            fields: [
+              'fileInfo',
+              'title',
+              'excerpt',
+              'date_published',
+              'tags'
+            ]
+          }
+        ]
+      }
     }
   ],
   templates: {

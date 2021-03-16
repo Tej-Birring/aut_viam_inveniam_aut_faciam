@@ -9,9 +9,9 @@ hero_image: ''
 images: []
 
 ---
-Yada yada yada.
+![](/uploads/screenshot-2021-03-08-at-08-16-30.png)
 
-![](/uploads/02farm-stir5.jpg)
+Yada yada yada.
 
 > sadsadsada
 

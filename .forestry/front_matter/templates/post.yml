@@ -41,13 +41,8 @@ fields:
     display_utc: false
   default: now
 - name: seo_keywords
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
+  type: tag_list
+  default: []
   label: SEO Keywords
 - name: seo_description
   type: textarea

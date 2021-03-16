@@ -8,6 +8,10 @@ $theme-color-5: #E5E0D0;
 $theme-color-6: #94948E;
 $theme-color-7: #292F36;
 
+.bg-theme-color-6 {
+  background-color: $theme-color-6;
+}
+
 $bp-sm: 576px;
 $bp-md: 768px;
 $bp-lg: 992px;

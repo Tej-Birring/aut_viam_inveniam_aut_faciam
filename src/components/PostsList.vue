@@ -4,8 +4,13 @@
             <b-card-header class="text-center">
                 {{post.title}}
             </b-card-header>
-            <b-card-body>
-                {{post.excerpt}}
+            <b-card-body class="d-flex flex-column flex-nowrap justify-content-between">
+                <p v-if="post.excerpt">
+                    {{prettifyExcerpt(post.excerpt)}}
+                </p>
+                <div class="cardTags">
+                    <b-badge class="mr-2 bg-theme-color-6" pill variant="dark" v-for="tag in post.tags" :key="tag">{{tag}}</b-badge>
+                </div>
             </b-card-body>
             <b-card-footer class="text-small">
                 <div class="footer">
@@ -35,6 +40,13 @@
             },
             gotoPost(post) {
                 this.$router.push(`/posts/${post.fileInfo.name}`);
+            },
+            prettifyExcerpt(string) {
+                string = string.trim();
+                if (string.endsWith(".")) {
+                    return string+="..";
+                }
+                else return string +="...";
             }
         }
     }
@@ -68,6 +80,10 @@
         :first-child {
             margin-right: 0.2rem;
             margin-bottom: 0.19rem;
+        }
+
+        .cardTags {
+            display: block;
         }
     }
 </style>

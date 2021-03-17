@@ -27,7 +27,7 @@ jobs:
         run: curl -X POST -d {} https://api.netlify.com/build_hooks/6051f8c43b0a9581ef1698dc
     
       - name: Inform
-        run: echo Netlify Build & Deploy Process has been signalled. 
+        run: echo Netlify Build \& Deploy Process has been signalled.
         
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: actions/checkout@v2

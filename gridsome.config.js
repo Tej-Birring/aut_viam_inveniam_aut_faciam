@@ -20,26 +20,21 @@ module.exports = {
         }
       }
     },
-    {
-      use: 'gridsome-plugin-flexsearch',
-      options: {
-        searchFields: ['title', 'tags', 'seo_keywords', 'content', 'seo_description'],
-        collections: [
-          {
-            typeName: 'Post',
-            indexName: 'Post',
-            fields: [
-              'id',
-              'fileInfo',
-              'title',
-              'excerpt',
-              'date_published',
-              'tags'
-            ]
-          }
-        ]
-      }
-    }
+    // {
+    //   use: 'gridsome-plugin-flexsearch',
+    //   options: {
+    //     searchFields: ['title', 'tags', 'content', 'seo_keywords', 'seo_description'],
+    //     collections: [
+    //       {
+    //         typeName: 'Post',
+    //         indexName: 'Post',
+    //         fields: [
+    //           'id'
+    //         ]
+    //       }
+    //     ]
+    //   }
+    // }
   ],
   templates: {
     Post: '/posts/:title'

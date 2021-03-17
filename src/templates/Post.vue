@@ -2,14 +2,17 @@
     <Layout>
         <div class="break"></div>
         <div class="info">
+            <b-button variant="secondary" @click.prevent.stop="goHome">
+                <b-icon icon="arrow-left"/>
+            </b-button>
             <div class="dateInfo">
                 <div class="date">
-                    <b-icon icon="calendar-fill"/>
+                    <b-icon class="mr-1" icon="calendar-fill"/>
                     <span class="font-weight-bold">Published:&nbsp</span>
                     <span>{{formatDate($page.post.date_published)}}</span>
                 </div>
                 <div class="date" v-if="showLastModified">
-                    <b-icon icon="calendar-fill"/>
+                    <b-icon class="mr-1" icon="calendar-fill"/>
                     <span class="font-weight-bold">Last Modified:&nbsp</span>
                     <span>{{formatDate($page.post.date_last_modified)}}</span>
                 </div>
@@ -33,6 +36,9 @@
         methods: {
             formatDate(dateString) {
                 return this.$dayjs(dateString).format("dddd Do MMMM YYYY");
+            },
+            goHome() {
+                this.$router.push(`/`);
             }
         },
         computed: {
@@ -52,8 +58,9 @@
     .info {
         display: flex;
         flex-flow: row nowrap;
+        justify-content: space-between;
         padding-top: 1rem;
-        padding-bottom: 1.6rem;
+        padding-bottom: 1.4rem;
     }
 
     .dateInfo {
@@ -65,7 +72,7 @@
         color: $theme-color-6;
         display: flex;
         flex-flow: row nowrap;
-        font-size: 0.8rem;
+        font-size: 1rem;
         align-items: center;
         justify-content: flex-start;
         :first-child {

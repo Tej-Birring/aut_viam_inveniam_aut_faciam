@@ -1,12 +1,12 @@
 <template>
     <div class="grid">
-        <b-card class="shadow-sm" v-for="post in posts" :key="post.id" bg-variant="light" no-body>
+        <b-card class="shadow-sm post" v-for="post in posts" :key="post.id" bg-variant="light" no-body>
             <b-card-header class="text-center">
                 {{post.title}}
             </b-card-header>
             <b-card-body class="d-flex flex-column flex-nowrap justify-content-between">
                 <p v-if="post.excerpt">
-                    {{prettifyExcerpt(post.excerpt)}}
+                    {{post.excerpt}}
                 </p>
                 <div class="cardTags">
                     <b-badge class="mr-2 bg-theme-color-6" pill variant="dark" v-for="tag in post.tags" :key="tag">{{tag}}</b-badge>
@@ -40,13 +40,6 @@
             },
             gotoPost(post) {
                 this.$router.push(`/posts/${post.fileInfo.name}`);
-            },
-            prettifyExcerpt(string) {
-                string = string.trim();
-                if (string.endsWith(".")) {
-                    return string+="..";
-                }
-                else return string +="...";
             }
         }
     }
@@ -54,6 +47,7 @@
 
 <style scoped lang="scss">
     .grid {
+        align-self: start;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -62,6 +56,9 @@
         grid-gap: 1rem;
         /* This is the standardized property now, but has slightly less support */
         /* gap: 1rem */
+        .post {
+            min-height: 20rem;
+        }
     }
 
     .footer {

@@ -15,8 +15,8 @@
     <div class="pagination_buttons">
       <b-pagination
               v-model="currentPage"
-              :total-rows="$page.posts.pageInfo.totalPages * 6"
-              :per-page="6"
+              :total-rows="$page.posts.edges.length"
+              :per-page="nPostsPerPage"
               first-number
               last-number
               pills
@@ -30,10 +30,9 @@
 
 <script>
 import PostsList from "../components/PostsList";
-import { Pager } from 'gridsome'
 
 export default {
-  components: {PostsList, Pager},
+  components: {PostsList},
   metaInfo: {
     title: 'Hello, world!'
   },
@@ -41,34 +40,33 @@ export default {
     return {
       search: "",
       currentPage: 1,
+      nPostsPerPage: 6,
     }
   },
   computed: {
     posts() {
-      return this.$page.posts.edges.map( el => el.node );
+      let posts = this.$page.posts.edges.map( el => el.node );
+      const beginIdx = ((this.currentPage-1) * this.nPostsPerPage);
+      const endIdx = beginIdx + this.nPostsPerPage;
+      posts = posts.slice(beginIdx, endIdx);
+      return posts;
     },
     searchResults () {
-      const searchTerm = this.search;
-      if (searchTerm.length < 3) return [];
-      return this.$search.search({ query: searchTerm }).map( el => el.node )
+      if (!this.search) return [];
+      let posts = this.$page.posts.edges.map( el => el.node );
+      console.log(posts);
+      posts = posts.filter( el => {
+        return el.searchString.includes(this.search.toLowerCase());
+      } );
+      return posts;
     },
     postsToShow() {
-      if (this.searchResults.length > 0)
+      if (this.search)
         return this.searchResults;
       else
         return this.posts;
     }
-
   },
-  watch: {
-    currentPage(val) {
-      console.log("currentPage changed: ", val);
-      if (val > 1)
-        this.$router.push(`/${val}/`);
-      else
-        this.$router.push(`/`);
-    }
-  }
 }
 </script>
 
@@ -116,22 +114,45 @@ export default {
 
 
 <page-query>
-  query ($page: Int) {
-    posts: allPost(perPage: 6, page: $page, sortBy: "date_published", order: DESC) @paginate {
-      pageInfo {
-        totalPages,
-        currentPage
-      },
-      edges {
-        node {
-          id,
-          fileInfo{name},
-          title,
-          excerpt,
-          date_published
-          tags,
-        }
-      }
-    }
+  query {
+  posts: allPost {
+  pageInfo {
+  totalPages,
+  currentPage
+  },
+  edges {
+  node {
+  id,
+  fileInfo{name},
+  title,
+  excerpt,
+  date_published
+  tags,
+  searchString
+  }
+  }
+  }
   }
 </page-query>
+
+
+<!--<page-query>-->
+<!--  query ($page: Int) {-->
+<!--    posts: allPost(perPage: 6, page: $page, sortBy: "date_published", order: DESC) @paginate {-->
+<!--      pageInfo {-->
+<!--        totalPages,-->
+<!--        currentPage-->
+<!--      },-->
+<!--      edges {-->
+<!--        node {-->
+<!--          id,-->
+<!--          fileInfo{name},-->
+<!--          title,-->
+<!--          customExcerpt,-->
+<!--          date_published-->
+<!--          tags-->
+<!--        }-->
+<!--      }-->
+<!--    }-->
+<!--  }-->
+<!--</page-query>-->

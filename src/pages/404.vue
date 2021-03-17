@@ -2,7 +2,7 @@
     <Layout>
 
         <div class="text-center face">
-            <svg width="300px" height="auto" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            <svg width="300px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <g>
 	<g>
@@ -154,16 +154,24 @@
         </div>
 
         <div class="text-center msg">
-            <h1 class="display-4">Not Found</h1>
-            <p class="text-lg">I could not find the resource you are looking for.</p>
-        </div>
+            <h1 class="display-4">Sorry,</h1>
+            <p class="text-lg mb-4">I could not find the resource you are looking for.</p>
+			<b-button variant="secondary" @click.prevent.stop="goHome">
+				Homepage
+			</b-button>
+		</div>
 
     </Layout>
 </template>
 
 <script>
     export default {
-        name: "404"
+        name: "404",
+		methods: {
+			goHome() {
+				this.$router.push(`/`);
+			}
+		}
     }
 </script>
 

@@ -59,7 +59,7 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
-        align-items: start;
+        align-items: flex-start;
         padding-top: 1rem;
         padding-bottom: 1.4rem;
     }

@@ -54,7 +54,6 @@ export default {
     searchResults () {
       if (!this.search) return [];
       let posts = this.$page.posts.edges.map( el => el.node );
-      console.log(posts);
       posts = posts.filter( el => {
         return el.searchString.includes(this.search.toLowerCase());
       } );

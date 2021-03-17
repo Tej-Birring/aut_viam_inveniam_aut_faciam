@@ -2,7 +2,7 @@
     <Layout>
         <div class="break"></div>
         <div class="info">
-            <b-button variant="secondary" @click.prevent.stop="goHome">
+            <b-button class="backBtn" variant="secondary" @click.prevent.stop="goHome">
                 <b-icon icon="arrow-left"/>
             </b-button>
             <div class="dateInfo">
@@ -13,7 +13,7 @@
                 </div>
                 <div class="date" v-if="showLastModified">
                     <b-icon class="mr-1" icon="calendar-fill"/>
-                    <span class="font-weight-bold">Last Modified:&nbsp</span>
+                    <span class="font-weight-bold">Last Updated:&nbsp</span>
                     <span>{{formatDate($page.post.date_last_modified)}}</span>
                 </div>
             </div>
@@ -59,6 +59,7 @@
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
+        align-items: start;
         padding-top: 1rem;
         padding-bottom: 1.4rem;
     }

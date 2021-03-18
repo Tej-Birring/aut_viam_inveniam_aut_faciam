@@ -53,5 +53,3 @@ fields:
     schema:
       format: markdown
   label: SEO Description
-pages:
-- src/assets/posts/a-sample-post.md

@@ -108,6 +108,7 @@ export default {
     }
     color: transparent;
     text-shadow: 0 0 0 $theme-color-7;
+    cursor: pointer;
   }
 
   .wrap {
@@ -120,6 +121,7 @@ export default {
   input[type="search"]:focus {
     outline: none;
     border: none 4px;
+    cursor: default;
   }
 
   input[type="search"]::-webkit-search-cancel-button {

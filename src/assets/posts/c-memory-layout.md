@@ -19,7 +19,7 @@ seo_description: ''
 ---
 # Introduction
 
-In computer hardware terminology, the word 'memory' denotes a physical matrix of cells, with each cell capable of storing a binary '1' or '0', known as a 'bit' (unit). The physical technology used to implement these cells vary depending on the type of memory being addressed within a computer system (which we shall discuss [later](###types-of-memory)). In most modern system, typically based on processors that implement the ARMv* or x86-64 architecture, these cells are _not_ individually addressable; the smallest addressable unit is typically a 'byte' (unit, consisting of 8 consecutive bits).
+In computer hardware terminology, the word 'memory' denotes a physical matrix of cells, with each cell capable of storing a binary '1' or '0', known as a 'bit' (unit). The physical technology used to implement these cells vary depending on the type of memory being addressed within a computer system (which we shall discuss later). In most modern system, typically based on processors that implement the ARMv* or x86-64 architecture, these cells are _not_ individually addressable; the smallest addressable unit is typically a 'byte' (unit, consisting of 8 consecutive bits).
 
 Each byte of memory is addressed via an address bus of N-bit width, where N is defined by the processor architecture. For example:
 
@@ -40,6 +40,8 @@ It is worth noting that a series of digital circuitry defined by the architectur
 Depending on the architecture of the processor, machine code instructions do not necessarily have to use the full N-bit wide address, instructions may use _address offsets_ instead. Memory _'addressing modes'_ are beyond the scope of this article.
 
 ## Types of Memory
+
+A typical computer system consists of main different forms of memory. 
 
 # References
 

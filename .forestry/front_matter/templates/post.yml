@@ -53,3 +53,5 @@ fields:
     schema:
       format: markdown
   label: SEO Description
+pages:
+- src/assets/posts/c-memory-layout.md

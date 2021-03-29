@@ -41,7 +41,30 @@ Depending on the architecture of the processor, machine code instructions do not
 
 ## Types of Memory
 
-A typical computer system consists of many different forms of 'memory' — the term 'memory' being used in the most abstract sense as the means by which to store digital (binary) data consisting of logic '0'
+A typical computer system consists of many different forms of 'memory' — the term 'memory', in this section, being used in the most abstract sense for the means by which digital binary data is stored.
+
+Computer memory can typically be divided into two categories: \[3\] \[4\] \[5\]
+
+1. **Permanent Storage** (also known as **Secondary Memory**).  
+   This is memory which is relatively cheap (per byte of storage), but also relatively slow compared to _primary memory_; it also does not require power to hold the data — hence it is use for storing "lots of data" permanently. Typical examples of secondary memory are: (magnetic) hard disk drives (HDDs), solid-state drives (SSDs) networked storage, USB Flash Drives, and SD Cards.
+
+   On embedded computer systems, other means of permanent storage may also be present, depending on the particular use-case and design of the system.
+
+   Examples being:
+   * ROM
+   * PROM
+   * EPROM
+   * EEPROM
+   * Flash Memory
+     * NAND: fast write and erase operations, in units of bytes called 'sectors' and 'blocks'.
+     * NOR: fast read operations, and random (byte-wise) access. Typically used for instruction storage and execution (i.e. XIP, "execute in place").
+     * _Note:_ In general-purpose computers, flash memory is used to store BIOS and/or UEFI firmware — which assists in detecting and loading the operating system from any one of possibly myriad secondary memory devices connected to the system.
+   * Non-Volatile RAM (NVRAM)
+     * _Note:_ In general-purpose computers, NVRAM is used to store the state of the CPU and/or _primary memory_, in order to speed up OS boot time and 'waking' from a 'sleep' state.
+2. **Temporary Storage** (also known as **Primary Memory**).  
+   Colloquially called "runtime memory", _primary memory_ is responsible for storing the _state_ of the machine. More specifically, the one or more programs (a 'program' being a series of instructions intended for a common purpose) running on the system — this includes the operating system (if any) and the numerous _kernel-space_ and _user-space_ processes (and/or threads) running in the background.
+
+   this is the memory we are primary concerned with as application developers.
 
 # References
 
@@ -49,4 +72,8 @@ A typical computer system consists of many different forms of 'memory' — the t
 
 **\[2\]** Intel Corporation, Santa Clara, California, USA, _Intel® 64 and IA-32 Architectures Software Developer's Manual,_ vol. 1. (2020). Accessed: 29th March 2021. \[Online\]. Available: [https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html](https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html "https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html")
 
-**\[3\]** fdd
+**\[3\]** N. Nlatanov, _Computer Memory, Applications and Management_. (2016). Accessed: 29th March 2021. \[Online\]. Available: [https://www.researchgate.net/publication/295550090_Computer_Memory_Applications_and_Management](https://www.researchgate.net/publication/295550090_Computer_Memory_Applications_and_Management "https://www.researchgate.net/publication/295550090_Computer_Memory_Applications_and_Management")
+
+**\[4\]**
+
+**\[5\]** Q. Li and C. Yao, "Basics of Developing for Embedded Systems," in _Real-Time Concepts for Embedded Systems_, San Francisco, CA, USA: CMPBooks, 2003, pp. 19-34.

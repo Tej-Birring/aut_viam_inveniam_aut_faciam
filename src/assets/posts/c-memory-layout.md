@@ -19,7 +19,7 @@ seo_description: ''
 ---
 # Introduction
 
-In computer hardware terminology, the word 'memory' denotes a physical matrix of cells, with each cell capable of storing a binary '1' or '0', known as a 'bit' (unit). The physical technology used to implement these cells vary depending on the type of memory being addressed within a computer system (which we shall discuss [later](#types-of-memory)). In most modern system, typically based on processors that implement the ARMv* or x86-64 architecture, these cells are _not_ individually addressable; the smallest addressable unit is typically a 'byte' (unit, consisting of 8 consecutive bits).
+In computer hardware terminology, the word 'memory' denotes a physical matrix of cells, with each cell capable of storing a binary '1' or '0', known as a 'bit' (unit). The physical technology used to implement these cells vary depending on the type of memory being addressed within a computer system (which we shall discuss [later](###types-of-memory)). In most modern system, typically based on processors that implement the ARMv* or x86-64 architecture, these cells are _not_ individually addressable; the smallest addressable unit is typically a 'byte' (unit, consisting of 8 consecutive bits).
 
 Each byte of memory is addressed via an address bus of N-bit width, where N is defined by the processor architecture. For example:
 
@@ -43,8 +43,8 @@ Depending on the architecture of the processor, machine code instructions do not
 
 # References
 
-\[1\] Arm Ltd., Cambridge, UK, _ARM® Architecture Reference Manual: ARMv7-A and ARMv7-R edition._ (2007). Accessed: 29th March 2021. \[Online\]. Available: [https://developer.arm.com/documentation/ddi0406/cd](https://developer.arm.com/documentation/ddi0406/cd "https://developer.arm.com/documentation/ddi0406/cd")
+**\[1\]** Arm Ltd., Cambridge, UK, _ARM® Architecture Reference Manual: ARMv7-A and ARMv7-R edition._ (2007). Accessed: 29th March 2021. \[Online\]. Available: [https://developer.arm.com/documentation/ddi0406/cd](https://developer.arm.com/documentation/ddi0406/cd "https://developer.arm.com/documentation/ddi0406/cd")
 
-\[2\] Intel Corporation, Santa Clara, California, USA, _Intel® 64 and IA-32 Architectures Software Developer's Manual,_ vol. 1. (2020). Accessed: 29th March 2021. \[Online\]. Available: [https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html](https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html "https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html")
+**\[2\]** Intel Corporation, Santa Clara, California, USA, _Intel® 64 and IA-32 Architectures Software Developer's Manual,_ vol. 1. (2020). Accessed: 29th March 2021. \[Online\]. Available: [https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html](https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html "https://software.intel.com/content/www/us/en/develop/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4.html")
 
-\[3\]
+**\[3\]** fdd

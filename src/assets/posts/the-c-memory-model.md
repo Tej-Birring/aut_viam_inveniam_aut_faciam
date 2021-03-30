@@ -19,7 +19,7 @@ seo_description: ''
 ---
 # Introduction
 
-In computer hardware terminology, the word 'memory' denotes a physical matrix of cells, with each cell capable of storing a binary '1' or '0', known as a 'bit' (unit). The physical technology used to implement these cells vary depending on the type of memory being addressed within a computer system (which we shall discuss [later](#types-of-memory)). In most modern system, typically based on processors that implement the ARMv* or x86-64 architecture, these cells are _not_ individually addressable; the smallest addressable unit is typically a 'byte' (unit, consisting of 8 consecutive bits).
+In computer hardware terminology, the word 'memory' denotes a physical matrix of cells, with each cell capable of storing a binary '1' or '0', known as a 'bit' (unit). The physical technology used to implement these cells vary depending on the type of memory being addressed within a computer system (discuss [here](#types-of-memory)). In most modern computer system, typically based on processors that implement the ARMv* or x86-64 architecture, these cells are _not_ individually addressable; the smallest addressable unit is typically a 'byte' (unit, consisting of 8 consecutive bits).
 
 Each byte of memory is addressed via an address bus of N-bit width, where N is defined by the processor architecture. For example:
 
@@ -41,7 +41,9 @@ Depending on the architecture of the processor, machine code instructions do not
 
 ## Types of Memory
 
-A typical computer system consists of many different forms of 'memory' — the term 'memory', in this section, being used in the most abstract sense for the means by which digital binary data is stored.
+### Physical Memory
+
+A typical computer system consists of many different forms of 'memory' — the term 'memory', in this section, being used in the most abstract sense for the means by which digital binary data is stored for various purposes.
 
 Computer memory can typically be divided into two categories: \[3\] \[4\] \[5\]
 
@@ -62,9 +64,20 @@ Computer memory can typically be divided into two categories: \[3\] \[4\] \[5\]
    * Non-Volatile RAM (NVRAM)
      * _Note:_ In general-purpose computers, NVRAM is used to store the state of the CPU and/or _primary memory_, in order to speed up OS boot time and 'waking' from a 'sleep' state.
 2. **Temporary Storage** (also known as **Primary Memory**).  
-   Colloquially called "runtime memory", _primary memory_ is responsible for storing the _state_ of the machine. More specifically, the one or more programs (a 'program' being a series of instructions intended for a common purpose) running on the system — this includes the operating system (if any) and the numerous _kernel-space_ and _user-space_ processes (and/or threads) running in the background.
+   Colloquially called "runtime memory", _primary memory_ is responsible for storing the _state_ of the machine. More specifically, the one or more programs (a 'program' being a series of instructions intended for a common purpose) running on the system — this includes the operating system kernel (if any) and the numerous _kernel-level_ and _user-level_ 'processes' and/or 'threads' whose contexts m  
+     
+   \[\]
 
-   this is the memory we are primary concerned with as application developers.
+   _Thread states (and transitions) of the Windows operating system. \[6\]_  
+   \[\]  
+   _Thread states (and transitions) of the Linux operating system. \[6\]_
+
+   **  
+   _There are multiple levels of primary storage. _**
+
+   most of which the programmer has little direct control over (as there is no instruction that enables manipulation of 
+
+## Virtual Memory
 
 # References
 
@@ -74,6 +87,8 @@ Computer memory can typically be divided into two categories: \[3\] \[4\] \[5\]
 
 **\[3\]** N. Nlatanov, _Computer Memory, Applications and Management_. (2016). Accessed: 29th March 2021. \[Online\]. Available: [https://www.researchgate.net/publication/295550090_Computer_Memory_Applications_and_Management](https://www.researchgate.net/publication/295550090_Computer_Memory_Applications_and_Management "https://www.researchgate.net/publication/295550090_Computer_Memory_Applications_and_Management")
 
-**\[4\]**
+**\[4\]** M. Barr, "Memory Types," _Embedded Systems Programming,_ pp. 103-104, May, 2001. Accessed: 29th March 2021. \[Online\]. Available: [http://homepage.cem.itesm.mx/carbajal/Microcontrollers/ASSIGNMENTS/readings/ARTICLES/barr01_memory_types.pdf](http://homepage.cem.itesm.mx/carbajal/Microcontrollers/ASSIGNMENTS/readings/ARTICLES/barr01_memory_types.pdf "http://homepage.cem.itesm.mx/carbajal/Microcontrollers/ASSIGNMENTS/readings/ARTICLES/barr01_memory_types.pdf")
 
 **\[5\]** Q. Li and C. Yao, "Basics of Developing for Embedded Systems," in _Real-Time Concepts for Embedded Systems_, San Francisco, CA, USA: CMPBooks, 2003, pp. 19-34.
+
+**\[6\]** W. Stallings, "Threads," in _Operating Systems: Internals and Design Principles,_ 8th ed., London, UK: Pearson, 2015, pp. 182-228.

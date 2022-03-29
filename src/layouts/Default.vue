@@ -20,7 +20,7 @@
 
 
     <div class="cardo text-muted text-small footer">
-      Copyright © {{year}} G. S. Birring. <span class="text-nowrap">All Rights Reserved.</span>
+      Copyright © {{year}} Tej Birring.
     </div>
   </b-container>
 </template>
